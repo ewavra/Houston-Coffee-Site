@@ -5,6 +5,7 @@ import { coffeeShops, rankingModes, computeScore, areas } from "@/data/coffeeSho
 import CoffeeCard from "@/components/CoffeeCard";
 import RecommendForm from "@/components/RecommendForm";
 import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
 
 export default function Home() {
   const [modeId, setModeId] = useState("ethan");
@@ -62,6 +63,13 @@ export default function Home() {
             ))}
           </div>
           <div className="flex items-center gap-2">
+            <Link
+              href="/map"
+              className="px-4 py-1.5 rounded-full text-sm font-medium font-sans border transition-colors hover:opacity-80"
+              style={{ borderColor: "var(--accent)", color: "var(--accent)" }}
+            >
+              Map View
+            </Link>
             <select
               value={selectedArea}
               onChange={(e) => setSelectedArea(e.target.value)}
