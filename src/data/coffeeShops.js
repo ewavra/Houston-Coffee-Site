@@ -438,8 +438,7 @@ export function computeScore(shop, mode) {
     }
   }
   if (weightSum === 0) return 0;
-  // Normalize to the weights actually used
-  return (total / weightSum) * 5;
+  return total / weightSum;
 }
 
 export const areas = [...new Set(raw.map((s) => s.area))].sort();

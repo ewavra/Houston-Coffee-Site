@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { APIProvider, Map, Marker, InfoWindow } from "@vis.gl/react-google-maps";
+import { APIProvider, Map, AdvancedMarker, InfoWindow } from "@vis.gl/react-google-maps";
 import { coffeeShops, rankingModes, computeScore } from "@/data/coffeeShops";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY!;
+const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_ID!;
 
 function scoreToColor(score: number): string {
   if (score >= 4.2) return "#92400e";
@@ -15,16 +16,26 @@ function scoreToColor(score: number): string {
   return "#a8a29e";
 }
 
-function makeIcon(color: string, score: number) {
-  const size = Math.round(20 + (score / 5) * 16);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10" fill="${color}" stroke="white" stroke-width="2.5"/>
-  </svg>`;
-  return {
-    url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
-    scaledSize: { width: size, height: size, equals: () => false } as google.maps.Size,
-    anchor: { x: size / 2, y: size / 2, equals: () => false } as google.maps.Point,
-  };
+function scoreToSize(score: number): number {
+  return Math.round(18 + (score / 5) * 16);
+}
+
+function MarkerDot({ score }: { score: number }) {
+  const size = scoreToSize(score);
+  const color = scoreToColor(score);
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        background: color,
+        border: "2.5px solid white",
+        boxShadow: "0 1px 4px rgba(0,0,0,0.35)",
+        cursor: "pointer",
+      }}
+    />
+  );
 }
 
 export default function MapPage() {
@@ -95,24 +106,26 @@ export default function MapPage() {
           <Map
             defaultCenter={{ lat: 29.762, lng: -95.393 }}
             defaultZoom={12}
+            mapId={MAP_ID}
             style={{ width: "100%", height: "100%" }}
             gestureHandling="greedy"
-            disableDefaultUI={false}
           >
             {ranked.map((shop) => (
-              <Marker
+              <AdvancedMarker
                 key={shop.name}
                 position={{ lat: shop.lat, lng: shop.lng }}
-                icon={makeIcon(scoreToColor(shop.rankScore), shop.rankScore)}
                 title={shop.name}
                 onClick={() => setSelected(shop.name === selected ? null : shop.name)}
-              />
+              >
+                <MarkerDot score={shop.rankScore} />
+              </AdvancedMarker>
             ))}
 
             {selected && selectedShop && (
               <InfoWindow
                 position={{ lat: selectedShop.lat, lng: selectedShop.lng }}
                 onCloseClick={() => setSelected(null)}
+                pixelOffset={[0, -scoreToSize(selectedShop.rankScore) / 2 - 4]}
               >
                 <div style={{ fontFamily: "sans-serif", maxWidth: 240, padding: 4 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 4 }}>
