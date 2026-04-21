@@ -321,7 +321,7 @@ const raw = [
     restroom: "Yes",
   },
   {
-    name: "Third Place (in Jun)",
+    name: "Third Place (in Jūn)",
     address: "420 E 20th St Suite A, Houston, TX 77008",
     area: "Heights",
     overview: "Coffee Forward: Coffee shop second, restaurant first, but not in the mornings. Third Place is an excellent place to spend a morning — 5 minutes or 3 hours — enjoying espresso out of beautiful glassware and enjoying the comfortable interior of Jun.",
@@ -339,7 +339,7 @@ const raw = [
     restroom: "Yes",
   },
   {
-    name: "Carino Coffee (Houston Ave.)",
+    name: "Cariño Coffee (Houston Ave.)",
     address: "3024 Houston Ave, Houston, TX 77009",
     area: "Heights",
     overview: "Coffee Forward: This tiny space on the side of Houston Avenue is set up for a grab-n-go-n-walk experience in the Woodland Heights. While this is their second location, it features an efficient walk-up window and a drive thru. The drip is unreal, and the locale is cute. Not much else to this simple experience.",
