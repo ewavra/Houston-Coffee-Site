@@ -396,14 +396,14 @@ export const rankingModes = [
   {
     id: "work",
     label: "Study / Work",
-    description: "Best spots for getting things done — wifi, outlets, seating, and quiet.",
-    weights: { outlets: 0.25, wifi: 0.2, seating: 0.2, noiseLevel: 0.2, customerService: 0.15 },
+    description: "Best spots for getting things done — outlets, wifi, seating, and service.",
+    weights: { outlets: 0.25, wifi: 0.25, seating: 0.3, customerService: 0.2 },
   },
   {
     id: "date",
     label: "Date / Hang",
     description: "Great ambiance, lighting, and vibe for a date or a chill hangout.",
-    weights: { vibeCheck: 0.3, lighting: 0.2, customerService: 0.2, noiseLevel: 0.15, food: 0.15 },
+    weights: { vibeCheck: 0.3, lighting: 0.2, customerService: 0.2, seating: 0.15, food: 0.15 },
   },
 ];
 
