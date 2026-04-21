@@ -32,41 +32,46 @@ export default function RecommendForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl px-6 py-5 text-green-800 text-sm">
+      <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-xl px-6 py-5 text-green-800 dark:text-green-200 text-sm">
         Thanks for the recommendation! Ethan will check it out.
       </div>
     );
   }
 
+  const inputClass = "w-full rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 border font-sans";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
       <div>
-        <label className="block text-sm font-medium text-stone-700 mb-1">Shop Name *</label>
+        <label className="block text-sm font-medium mb-1 font-sans" style={{ color: "var(--foreground)" }}>Shop Name *</label>
         <input
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Onyx Coffee Lab"
-          className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400"
+          className={inputClass}
+          style={{ background: "var(--card)", color: "var(--foreground)", borderColor: "var(--card-border)" }}
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-stone-700 mb-1">Address</label>
+        <label className="block text-sm font-medium mb-1 font-sans" style={{ color: "var(--foreground)" }}>Address</label>
         <input
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           placeholder="e.g. 123 Main St, Houston, TX"
-          className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400"
+          className={inputClass}
+          style={{ background: "var(--card)", color: "var(--foreground)", borderColor: "var(--card-border)" }}
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-stone-700 mb-1">Why should Ethan try it?</label>
+        <label className="block text-sm font-medium mb-1 font-sans" style={{ color: "var(--foreground)" }}>Why should Ethan try it?</label>
         <textarea
           value={note}
           onChange={(e) => setNote(e.target.value)}
           rows={3}
           placeholder="What makes it special?"
-          className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-stone-400 resize-none"
+          className={`${inputClass} resize-none`}
+          style={{ background: "var(--card)", color: "var(--foreground)", borderColor: "var(--card-border)" }}
         />
       </div>
       {status === "error" && (
@@ -75,7 +80,8 @@ export default function RecommendForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="bg-stone-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-stone-700 transition-colors disabled:opacity-50 cursor-pointer"
+        className="text-white px-6 py-2 rounded-full text-sm font-medium transition-opacity disabled:opacity-50 cursor-pointer hover:opacity-80 font-sans"
+        style={{ background: "var(--accent)" }}
       >
         {status === "sending" ? "Sending..." : "Submit Recommendation"}
       </button>

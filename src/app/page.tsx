@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { coffeeShops, rankingModes, computeScore, areas } from "@/data/coffeeShops";
 import CoffeeCard from "@/components/CoffeeCard";
 import RecommendForm from "@/components/RecommendForm";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const [modeId, setModeId] = useState("ethan");
@@ -35,7 +36,10 @@ export default function Home() {
       </header>
 
       {/* Ranking Mode Selector */}
-      <section className="sticky top-0 z-10 bg-white border-b border-stone-200 shadow-sm">
+      <section
+        className="sticky top-0 z-10 border-b shadow-sm"
+        style={{ background: "var(--card)", borderColor: "var(--card-border)" }}
+      >
         <div className="max-w-5xl mx-auto px-4 py-3 flex flex-wrap gap-2 items-center justify-between">
           <div className="flex flex-wrap gap-2">
             {rankingModes.map((mode) => (
@@ -45,27 +49,39 @@ export default function Home() {
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer font-sans ${
                   modeId === mode.id
                     ? "text-white"
-                    : "bg-stone-100 text-stone-600 hover:bg-stone-200"
+                    : "text-stone-600 dark:text-stone-300 hover:opacity-80"
                 }`}
-                style={modeId === mode.id ? { background: "var(--accent)" } : {}}
+                style={
+                  modeId === mode.id
+                    ? { background: "var(--accent)" }
+                    : { background: "var(--accent-light)" }
+                }
               >
                 {mode.label}
               </button>
             ))}
           </div>
-          <select
-            value={selectedArea}
-            onChange={(e) => setSelectedArea(e.target.value)}
-            className="text-sm border border-stone-300 rounded-lg px-3 py-1.5 bg-white text-stone-700 focus:outline-none font-sans"
-          >
-            <option value="All">All Neighborhoods</option>
-            {areas.map((a) => (
-              <option key={a} value={a}>{a}</option>
-            ))}
-          </select>
+          <div className="flex items-center gap-2">
+            <select
+              value={selectedArea}
+              onChange={(e) => setSelectedArea(e.target.value)}
+              className="text-sm rounded-lg px-3 py-1.5 focus:outline-none font-sans border"
+              style={{
+                background: "var(--card)",
+                color: "var(--foreground)",
+                borderColor: "var(--card-border)",
+              }}
+            >
+              <option value="All">All Neighborhoods</option>
+              {areas.map((a) => (
+                <option key={a} value={a}>{a}</option>
+              ))}
+            </select>
+            <ThemeToggle />
+          </div>
         </div>
         <div className="max-w-5xl mx-auto px-4 pb-2">
-          <p className="text-xs text-stone-400 font-sans">{activeMode.description}</p>
+          <p className="text-xs font-sans" style={{ color: "var(--muted)" }}>{activeMode.description}</p>
         </div>
       </section>
 
@@ -85,9 +101,9 @@ export default function Home() {
 
       {/* Recommend a Shop */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
-        <div className="border-t border-stone-200 pt-10">
+        <div className="pt-10" style={{ borderTop: "1px solid var(--card-border)" }}>
           <h2 className="font-serif text-2xl font-bold mb-1">Recommend a Shop</h2>
-          <p className="text-stone-500 text-sm mb-6 font-sans">
+          <p className="text-sm mb-6 font-sans" style={{ color: "var(--muted)" }}>
             Know a Houston coffee shop Ethan should try? Send it his way.
           </p>
           <RecommendForm />
