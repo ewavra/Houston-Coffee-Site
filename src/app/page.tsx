@@ -23,12 +23,13 @@ export default function Home() {
   }, [modeId, selectedArea, activeMode]);
 
   return (
-    <main className="min-h-screen bg-stone-50 text-stone-900">
+    <main className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
       {/* Header */}
-      <header className="bg-stone-900 text-stone-50 py-10 px-6 text-center">
-        <p className="text-stone-400 text-sm tracking-widest uppercase mb-2">Houston, TX</p>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Houston Coffee Rankings</h1>
-        <p className="text-stone-300 max-w-xl mx-auto text-sm">
+      <header className="bg-stone-900 text-stone-50 py-14 px-6 text-center">
+        <p className="text-amber-400 text-xs tracking-[0.25em] uppercase mb-3 font-sans">Houston, Texas</p>
+        <h1 className="font-serif text-5xl font-bold tracking-tight mb-3">Houston Coffee Rankings</h1>
+        <div className="w-12 h-px bg-amber-500 mx-auto mb-4" />
+        <p className="text-stone-400 max-w-md mx-auto text-sm font-sans leading-relaxed">
           Every shop personally visited and rated by Ethan. Filter by what matters to you.
         </p>
       </header>
@@ -41,11 +42,12 @@ export default function Home() {
               <button
                 key={mode.id}
                 onClick={() => setModeId(mode.id)}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer font-sans ${
                   modeId === mode.id
-                    ? "bg-stone-900 text-white"
+                    ? "text-white"
                     : "bg-stone-100 text-stone-600 hover:bg-stone-200"
                 }`}
+                style={modeId === mode.id ? { background: "var(--accent)" } : {}}
               >
                 {mode.label}
               </button>
@@ -54,7 +56,7 @@ export default function Home() {
           <select
             value={selectedArea}
             onChange={(e) => setSelectedArea(e.target.value)}
-            className="text-sm border border-stone-300 rounded-lg px-3 py-1.5 bg-white text-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            className="text-sm border border-stone-300 rounded-lg px-3 py-1.5 bg-white text-stone-700 focus:outline-none font-sans"
           >
             <option value="All">All Neighborhoods</option>
             {areas.map((a) => (
@@ -63,7 +65,7 @@ export default function Home() {
           </select>
         </div>
         <div className="max-w-5xl mx-auto px-4 pb-2">
-          <p className="text-xs text-stone-400">{activeMode.description}</p>
+          <p className="text-xs text-stone-400 font-sans">{activeMode.description}</p>
         </div>
       </section>
 
@@ -84,15 +86,15 @@ export default function Home() {
       {/* Recommend a Shop */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
         <div className="border-t border-stone-200 pt-10">
-          <h2 className="text-2xl font-bold mb-1">Recommend a Shop</h2>
-          <p className="text-stone-500 text-sm mb-6">
+          <h2 className="font-serif text-2xl font-bold mb-1">Recommend a Shop</h2>
+          <p className="text-stone-500 text-sm mb-6 font-sans">
             Know a Houston coffee shop Ethan should try? Send it his way.
           </p>
           <RecommendForm />
         </div>
       </section>
 
-      <footer className="bg-stone-900 text-stone-500 text-center text-xs py-6">
+      <footer className="bg-stone-900 text-stone-500 text-center text-xs py-6 font-sans">
         Built with ☕ by Ethan · Houston, TX
       </footer>
     </main>
