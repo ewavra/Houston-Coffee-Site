@@ -461,3 +461,10 @@ export function computeScore(shop, mode) {
 }
 
 export const areas = [...new Set(raw.map((s) => s.area))].sort();
+
+// Most recently visited shops, newest first
+export const recentlyReviewed = [
+  "Blacksmith",
+  "Catalina Coffee",
+  "Cariño Coffee (Houston Ave.)",
+];

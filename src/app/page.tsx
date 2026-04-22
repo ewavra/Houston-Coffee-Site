@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { coffeeShops, rankingModes, computeScore, areas } from "@/data/coffeeShops";
+import { coffeeShops, rankingModes, computeScore, areas, recentlyReviewed } from "@/data/coffeeShops";
 import CoffeeCard from "@/components/CoffeeCard";
 import RecommendForm from "@/components/RecommendForm";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -100,6 +100,48 @@ export default function Home() {
         </div>
         <div className="max-w-5xl mx-auto px-4 pb-2">
           <p className="text-xs font-sans" style={{ color: "var(--muted)" }}>{activeMode.description}</p>
+        </div>
+      </section>
+
+      {/* Recently Reviewed */}
+      <section className="max-w-5xl mx-auto px-4 pt-8">
+        <h2 className="font-serif text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>Recently Reviewed</h2>
+        <p className="text-xs font-sans mb-4" style={{ color: "var(--muted)" }}>The latest shops Ethan has visited.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+          {recentlyReviewed.map((name, i) => {
+            const shop = coffeeShops.find((s) => s.name === name);
+            if (!shop) return null;
+            return (
+              <div
+                key={name}
+                className="rounded-2xl border p-4 flex flex-col gap-2"
+                style={{ background: "var(--card)", borderColor: "var(--card-border)" }}
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className="text-xs font-sans font-semibold px-2 py-0.5 rounded-full"
+                    style={{ background: "var(--accent-light)", color: "var(--accent)" }}
+                  >
+                    {i === 0 ? "Latest" : `#${i + 1}`}
+                  </span>
+                  <span className="text-xs font-sans" style={{ color: "var(--muted)" }}>{shop.area}</span>
+                </div>
+                <div>
+                  <p className="font-serif font-bold text-base leading-tight" style={{ color: "var(--foreground)" }}>{shop.name}</p>
+                  <p className="text-xs mt-0.5 font-sans" style={{ color: "var(--muted)" }}>{shop.address}</p>
+                </div>
+                <p className="text-xs font-sans leading-relaxed line-clamp-3" style={{ color: "var(--muted)" }}>
+                  {shop.overview}
+                </p>
+                <div className="flex items-center justify-between mt-auto pt-1">
+                  <span className="text-xs font-sans" style={{ color: "var(--muted)" }}>Vibe</span>
+                  <span className="font-serif font-bold text-lg" style={{ color: "var(--accent)" }}>
+                    {shop.scores.vibeCheck?.toFixed(1) ?? "—"}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
