@@ -19,9 +19,19 @@ export default function Home() {
     if (selectedArea !== "All") {
       shops = shops.filter((s) => s.area === selectedArea);
     }
-    return shops
+    const sorted = shops
       .map((shop) => ({ ...shop, rankScore: computeScore(shop, activeMode) }))
       .sort((a, b) => b.rankScore - a.rankScore);
+
+    // Assign tie-aware ranks
+    let pos = 1;
+    return sorted.map((shop, idx) => {
+      if (idx > 0 && shop.rankScore !== sorted[idx - 1].rankScore) {
+        pos = idx + 1;
+      }
+      const isTied = sorted.filter((s) => s.rankScore === shop.rankScore).length > 1;
+      return { ...shop, rankLabel: isTied ? `T${pos}` : `${pos}` };
+    });
   }, [modeId, selectedArea, activeMode]);
 
   return (
@@ -95,11 +105,11 @@ export default function Home() {
 
       {/* Shop List */}
       <section className="max-w-5xl mx-auto px-4 py-8 space-y-4">
-        {ranked.map((shop, idx) => (
+        {ranked.map((shop) => (
           <CoffeeCard
             key={shop.name}
             shop={shop}
-            rank={idx + 1}
+            rank={shop.rankLabel}
             mode={activeMode}
             isExpanded={expandedId === shop.name}
             onToggle={() => setExpandedId(expandedId === shop.name ? null : shop.name)}

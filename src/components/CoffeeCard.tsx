@@ -65,7 +65,7 @@ export default function CoffeeCard({
   onToggle,
 }: {
   shop: any;
-  rank: number;
+  rank: string;
   mode: any;
   isExpanded: boolean;
   onToggle: () => void;
@@ -84,7 +84,7 @@ export default function CoffeeCard({
       >
         {/* Rank Number */}
         <div
-          className="text-4xl font-bold w-10 shrink-0 leading-none text-right"
+          className="text-3xl font-bold w-12 shrink-0 leading-none text-right"
           style={{ fontFamily: "var(--font-playfair)", color: "var(--card-border)" }}
         >
           {rank}
