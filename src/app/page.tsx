@@ -47,7 +47,11 @@ export default function Home() {
           <h1 className="font-serif text-5xl font-bold tracking-tight mb-3">Houston Coffee Rankings</h1>
           <div className="w-12 h-px bg-amber-500 mx-auto mb-4" />
           <p className="text-stone-400 max-w-md mx-auto text-sm font-sans leading-relaxed">
-            Every shop personally visited and rated by Ethan. Filter by what matters to you.
+            Every shop personally visited and rated by{" "}
+            <Link href="/about" className="underline underline-offset-2 hover:text-stone-200 transition-colors">
+              Ethan
+            </Link>
+            . Filter by what matters to you.
           </p>
         </div>
       </header>
