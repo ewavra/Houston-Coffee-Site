@@ -375,6 +375,25 @@ const raw = [
     parking: "1",
     restroom: "No",
   },
+  {
+    name: "Blacksmith",
+    address: "1018 Westheimer Rd, Houston, TX 77006",
+    area: "Montrose",
+    lat: 29.74482, lng: -95.3925,
+    overview: "Coffee Forward: Much like Catalina, I would consider this a coffee person's coffee shop. Less like Catalina, they offer comfortable seats and a nice bar to sit at and enjoy a morning espresso. The intimate interior is highlighted with a combination of exposed brick and tasteful wallpaper. The espresso is good enough to convince me I need a bag of their coffee. Overall, I would schedule my next coffee chat or catch-up here.",
+    vibeCheck: "4.25",
+    coffeeQuality: "4.5",
+    coffeeSelection: "5",
+    customerService: "3.5",
+    noiseLevel: "4",
+    lighting: "5",
+    wifi: "Yes",
+    seating: "3",
+    outlets: "1",
+    food: "Yes - All day breakfast and lunch",
+    parking: "4.5",
+    restroom: "Yes",
+  },
 ];
 
 export const coffeeShops = raw.map((shop) => ({
