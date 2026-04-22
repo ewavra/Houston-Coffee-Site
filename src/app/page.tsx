@@ -104,46 +104,32 @@ export default function Home() {
       </section>
 
       {/* Recently Reviewed */}
-      <section className="max-w-5xl mx-auto px-4 pt-8">
-        <h2 className="font-serif text-xl font-bold mb-1" style={{ color: "var(--foreground)" }}>Recently Reviewed</h2>
-        <p className="text-xs font-sans mb-4" style={{ color: "var(--muted)" }}>The latest shops Ethan has visited.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          {recentlyReviewed.map((name, i) => {
-            const shop = coffeeShops.find((s) => s.name === name);
-            if (!shop) return null;
-            return (
-              <div
-                key={name}
-                className="rounded-2xl border p-4 flex flex-col gap-2"
-                style={{ background: "var(--card)", borderColor: "var(--card-border)" }}
+      {(() => {
+        const shop = coffeeShops.find((s) => s.name === recentlyReviewed[0]);
+        if (!shop) return null;
+        return (
+          <section className="max-w-5xl mx-auto px-4 pt-8 pb-2">
+            <div
+              className="rounded-2xl border px-5 py-4 flex items-center gap-4"
+              style={{ background: "var(--card)", borderColor: "var(--card-border)" }}
+            >
+              <span
+                className="text-xs font-sans font-semibold px-2 py-0.5 rounded-full shrink-0"
+                style={{ background: "var(--accent-light)", color: "var(--accent)" }}
               >
-                <div className="flex items-center justify-between">
-                  <span
-                    className="text-xs font-sans font-semibold px-2 py-0.5 rounded-full"
-                    style={{ background: "var(--accent-light)", color: "var(--accent)" }}
-                  >
-                    {i === 0 ? "Latest" : `#${i + 1}`}
-                  </span>
-                  <span className="text-xs font-sans" style={{ color: "var(--muted)" }}>{shop.area}</span>
-                </div>
-                <div>
-                  <p className="font-serif font-bold text-base leading-tight" style={{ color: "var(--foreground)" }}>{shop.name}</p>
-                  <p className="text-xs mt-0.5 font-sans" style={{ color: "var(--muted)" }}>{shop.address}</p>
-                </div>
-                <p className="text-xs font-sans leading-relaxed line-clamp-3" style={{ color: "var(--muted)" }}>
-                  {shop.overview}
-                </p>
-                <div className="flex items-center justify-between mt-auto pt-1">
-                  <span className="text-xs font-sans" style={{ color: "var(--muted)" }}>Vibe</span>
-                  <span className="font-serif font-bold text-lg" style={{ color: "var(--accent)" }}>
-                    {shop.scores.vibeCheck?.toFixed(1) ?? "—"}
-                  </span>
-                </div>
+                Latest Review
+              </span>
+              <div className="flex-1 min-w-0">
+                <span className="font-serif font-bold text-sm" style={{ color: "var(--foreground)" }}>{shop.name}</span>
+                <span className="text-xs font-sans ml-2" style={{ color: "var(--muted)" }}>{shop.area}</span>
               </div>
-            );
-          })}
-        </div>
-      </section>
+              <span className="font-serif font-bold text-lg shrink-0" style={{ color: "var(--accent)" }}>
+                {shop.scores.vibeCheck?.toFixed(1) ?? "—"}
+              </span>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Shop List */}
       <section className="max-w-5xl mx-auto px-4 py-8 space-y-4">
