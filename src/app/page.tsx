@@ -37,13 +37,19 @@ export default function Home() {
   return (
     <main className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
       {/* Header */}
-      <header className="bg-stone-900 text-stone-50 py-14 px-6 text-center">
-        <p className="text-amber-400 text-xs tracking-[0.25em] uppercase mb-3 font-sans">Houston, Texas</p>
-        <h1 className="font-serif text-5xl font-bold tracking-tight mb-3">Houston Coffee Rankings</h1>
-        <div className="w-12 h-px bg-amber-500 mx-auto mb-4" />
-        <p className="text-stone-400 max-w-md mx-auto text-sm font-sans leading-relaxed">
-          Every shop personally visited and rated by Ethan. Filter by what matters to you.
-        </p>
+      <header className="relative bg-stone-900 text-stone-50 py-14 px-6 text-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/header.jpg')", opacity: 0.18 }}
+        />
+        <div className="relative z-10">
+          <p className="text-amber-400 text-xs tracking-[0.25em] uppercase mb-3 font-sans">Houston, Texas</p>
+          <h1 className="font-serif text-5xl font-bold tracking-tight mb-3">Houston Coffee Rankings</h1>
+          <div className="w-12 h-px bg-amber-500 mx-auto mb-4" />
+          <p className="text-stone-400 max-w-md mx-auto text-sm font-sans leading-relaxed">
+            Every shop personally visited and rated by Ethan. Filter by what matters to you.
+          </p>
+        </div>
       </header>
 
       {/* Ranking Mode Selector */}
