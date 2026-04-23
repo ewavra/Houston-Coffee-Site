@@ -376,10 +376,29 @@ const raw = [
     restroom: "No",
   },
   {
+    name: "Native Coffee",
+    address: "1712 W Dallas St, Houston, TX 77019",
+    area: "Montrose",
+    lat: 29.7579, lng: -95.38418,
+    overview: "Coffee Forward: Your grandmother's patio garden meets small coffee and sandwich shop. Sitting outside is always nice, but the unfortunate location of the patio along Dallas St. almost ruins it. Come here for a good flavored coffee, or a to-go order. The baristas are awesome, and will make sure you have a comfortable place to sit. Take my opinion with a grain of salt — I have not tried the sandwiches.",
+    vibeCheck: "3",
+    coffeeQuality: "3",
+    coffeeSelection: "2.5",
+    customerService: "5",
+    noiseLevel: "3",
+    lighting: "2.5",
+    wifi: "Yes",
+    seating: "3",
+    outlets: "2",
+    food: "Yes - Sandwiches",
+    parking: "4",
+    restroom: "Yes",
+  },
+  {
     name: "Blacksmith",
     address: "1018 Westheimer Rd, Houston, TX 77006",
     area: "Montrose",
-    lat: 29.74482, lng: -95.3925,
+    lat: 29.7448238, lng: -95.3925032,
     overview: "Coffee Forward: Much like Catalina, I would consider this a coffee person's coffee shop. Less like Catalina, they offer comfortable seats and a nice bar to sit at and enjoy a morning espresso. The intimate interior is highlighted with a combination of exposed brick and tasteful wallpaper. The espresso is good enough to convince me I need a bag of their coffee. Overall, I would schedule my next coffee chat or catch-up here.",
     vibeCheck: "4.25",
     coffeeQuality: "5",
@@ -464,7 +483,7 @@ export const areas = [...new Set(raw.map((s) => s.area))].sort();
 
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "Native Coffee",
   "Blacksmith",
   "Catalina Coffee",
-  "Cariño Coffee (Houston Ave.)",
 ];

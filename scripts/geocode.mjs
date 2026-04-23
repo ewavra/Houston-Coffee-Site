@@ -30,6 +30,7 @@ const addresses = [
   { name: "Catalina Coffee", address: "2201 Washington Ave, Houston, TX 77007" },
   { name: "Third Place (in Jūn)", address: "420 E 20th St Suite A, Houston, TX 77008" },
   { name: "Cariño Coffee (Houston Ave.)", address: "3024 Houston Ave, Houston, TX 77009" },
+  { name: "Native Coffee", address: "1712 W Dallas St, Houston, TX 77019" },
   { name: "Blacksmith", address: "1018 Westheimer Rd, Houston, TX 77006" },
 ];
 
