@@ -46,7 +46,10 @@ export default function Home() {
           <p className="text-amber-400 text-xs tracking-[0.25em] uppercase mb-3 font-sans">Houston, Texas</p>
           <h1 className="font-serif text-5xl font-bold tracking-tight mb-3">Houston Coffee Rankings</h1>
           <div className="w-12 h-px bg-amber-500 mx-auto mb-4" />
-          <p className="text-amber-500 text-xs font-sans mb-3 tracking-wide">{coffeeShops.length} shops visited</p>
+          <p className="text-amber-500 text-xs font-sans mb-3 tracking-wide">
+            <span className="border border-amber-500 rounded px-1.5 py-0.5 mr-1.5">{coffeeShops.length}</span>
+            shops visited
+          </p>
           <p className="text-stone-400 max-w-md mx-auto text-sm font-sans leading-relaxed">
             Every shop personally visited and rated by{" "}
             <Link href="/about" className="underline underline-offset-2 hover:text-stone-200 transition-colors">
