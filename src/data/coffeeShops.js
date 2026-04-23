@@ -382,7 +382,7 @@ const raw = [
     lat: 29.74482, lng: -95.3925,
     overview: "Coffee Forward: Much like Catalina, I would consider this a coffee person's coffee shop. Less like Catalina, they offer comfortable seats and a nice bar to sit at and enjoy a morning espresso. The intimate interior is highlighted with a combination of exposed brick and tasteful wallpaper. The espresso is good enough to convince me I need a bag of their coffee. Overall, I would schedule my next coffee chat or catch-up here.",
     vibeCheck: "4.25",
-    coffeeQuality: "4.5",
+    coffeeQuality: "5",
     coffeeSelection: "5",
     customerService: "3.5",
     noiseLevel: "4",
