@@ -429,7 +429,7 @@ export const rankingModes = [
     id: "coffee",
     label: "Best Coffee",
     description: "Ranked by coffee quality, variety, and overall experience.",
-    weights: { coffeeQuality: 0.5, coffeeSelection: 0.3, vibeCheck: 0.2 },
+    weights: { coffeeQuality: 0.6, coffeeSelection: 0.2, vibeCheck: 0.2 },
   },
   {
     id: "work",
