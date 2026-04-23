@@ -16,8 +16,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Houston Coffee Rankings",
-  description: "Ethan's ranked guide to the best coffee shops in Houston, TX.",
+  title: "Best Coffee Shops in Houston, TX | Houston Coffee Rankings",
+  description: "Personally visited and ranked coffee shops across Houston, TX — filtered by best coffee, study spots, date vibes, and more. Updated regularly by a local.",
+  keywords: "best coffee shops houston, houston coffee, coffee houston tx, houston cafe rankings, montrose coffee, heights coffee, houston espresso",
+  openGraph: {
+    title: "Best Coffee Shops in Houston, TX | Houston Coffee Rankings",
+    description: "Personally visited and ranked coffee shops across Houston, TX — filtered by best coffee, study spots, date vibes, and more.",
+    url: "https://houstoncoffeeproject.com",
+    siteName: "Houston Coffee Rankings",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

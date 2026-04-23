@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About | Houston Coffee Rankings",
+  description: "Learn about the person behind Houston Coffee Rankings — a local guide to the best coffee shops in Houston, TX.",
+};
 
 const faqs = [
   {
