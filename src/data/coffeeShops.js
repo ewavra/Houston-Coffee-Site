@@ -395,6 +395,25 @@ const raw = [
     restroom: "Yes",
   },
   {
+    name: "Brass Tacks",
+    address: "612 Live Oak St, Houston, TX 77003",
+    area: "East Downtown",
+    lat: 29.751442479556108, lng: -95.34948061876757,
+    overview: "Unclassified: This half bar half coffee shop half restaurant does not seem to lean in any particular direction. Located in a growing neighborhood in Edo, Brass Tacks gets the most amount Saturday AM traffic I have ever seen. The awesome blue backsplash complements the exposed brick very well, and the seating has a great variety to it. Enjoy patio or inside or tucked away in a nook. Perfect for a date, maybe not just for the coffee.",
+    vibeCheck: "4.25",
+    coffeeQuality: "3.25",
+    coffeeSelection: "4",
+    customerService: "5",
+    noiseLevel: "3",
+    lighting: "5",
+    wifi: "Yes",
+    seating: "5",
+    outlets: "3.75",
+    food: "Yes",
+    parking: "3.5",
+    restroom: "Yes",
+  },
+  {
     name: "Blacksmith",
     address: "1018 Westheimer Rd, Houston, TX 77006",
     area: "Montrose",
@@ -481,9 +500,17 @@ export function computeScore(shop, mode) {
 
 export const areas = [...new Set(raw.map((s) => s.area))].sort();
 
+export function toSlug(name) {
+  return name
+    .toLowerCase()
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "Brass Tacks",
   "Native Coffee",
   "Blacksmith",
-  "Catalina Coffee",
 ];
