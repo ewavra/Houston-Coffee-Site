@@ -362,7 +362,7 @@ const raw = [
     area: "Heights",
     lat: 29.7863635, lng: -95.37191209999999,
     overview: "Coffee Forward: This tiny space on the side of Houston Avenue is set up for a grab-n-go-n-walk experience in the Woodland Heights. While this is their second location, it features an efficient walk-up window and a drive thru. The drip is unreal, and the locale is cute. Not much else to this simple experience.",
-    vibeCheck: "4.5",
+    vibeCheck: "4",
     coffeeQuality: "4",
     coffeeSelection: "4",
     customerService: "4",
@@ -411,6 +411,25 @@ const raw = [
     outlets: "3.5",
     food: "Yes",
     parking: "3.5",
+    restroom: "Yes",
+  },
+  {
+    name: "Next Door on Larkin",
+    address: "5740 Larkin St, Houston, TX 77007",
+    area: "Heights",
+    lat: 29.779417771811936, lng: -95.4256766981592,
+    overview: "Food Forward: Next Door, the sister of \"Down the Street,\" has established itself as the premier outside seating breakfast/coffee shop in the Heights. With 15 seats inside and over 50 outside, this place is designed for a spring/fall morning. Too bad Houston doesn't have either of those seasons. They serve Tenfold coffee.",
+    vibeCheck: "4.25",
+    coffeeQuality: "3.25",
+    coffeeSelection: "3",
+    customerService: "5",
+    noiseLevel: "5",
+    lighting: "4.5",
+    wifi: "Yes",
+    seating: "4.25",
+    outlets: "3",
+    food: "Yes - Extensive breakfast",
+    parking: "3",
     restroom: "Yes",
   },
   {
@@ -529,7 +548,7 @@ export function toSlug(name) {
 
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "Next Door on Larkin",
   "Mercantile",
   "Brass Tacks",
-  "Native Coffee",
 ];
