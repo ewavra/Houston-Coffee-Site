@@ -470,6 +470,25 @@ const raw = [
     parking: "4.5",
     restroom: "Yes",
   },
+  {
+    name: "Luce Coffee Roasters",
+    address: "1717 W 34th St Ste 100, Houston, TX 77018",
+    area: "Heights",
+    lat: 29.81672795988223, lng: -95.4287631465445,
+    overview: "Coffee Forward: Post-modern looking brand with a consistently designed coffee shop. This double-deckered building provides few seats, none of which are comfortable. The coffee fulfills their aesthetic. This is the place to get a flavored latte, but that does not mean their espresso is bad.",
+    vibeCheck: "2.5",
+    coffeeQuality: "3.5",
+    coffeeSelection: "4",
+    customerService: "2.5",
+    noiseLevel: "3",
+    lighting: "2",
+    wifi: null,
+    seating: "1",
+    outlets: "3",
+    food: "Yes - Limited",
+    parking: "4",
+    restroom: "Yes",
+  },
 ];
 
 export const coffeeShops = raw.map((shop) => ({
@@ -548,7 +567,7 @@ export function toSlug(name) {
 
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "Luce Coffee Roasters",
   "Next Door on Larkin",
   "Mercantile",
-  "Brass Tacks",
 ];
