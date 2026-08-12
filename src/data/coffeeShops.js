@@ -324,7 +324,7 @@ const raw = [
     area: "Washington Avenue",
     lat: 29.7679683, lng: -95.3806638,
     overview: "Coffee Forward: Truly a coffee fan's coffee shop. Beautifully designed interior with ample seating serving Amaya Coffee. Outside has a nice vibe to it, although it sits on the busy Washington Avenue.",
-    vibeCheck: "4.25",
+    vibeCheck: "4.5",
     coffeeQuality: "5",
     coffeeSelection: "4",
     customerService: "3",
