@@ -489,6 +489,25 @@ const raw = [
     parking: "4",
     restroom: "Yes",
   },
+  {
+    name: "Charlie's Coffee Run",
+    address: "2314 Bissonnet St, Houston, TX 77005",
+    area: "Rice Village",
+    lat: 29.725864347709194, lng: -95.41346327116396,
+    overview: "Coffee Forward: A one man show located inside of Vinology, right off of Shepherd. The menu is tiny, and the beans are all hand selected. Imagine you got really bored one day and decided to start roasting coffee and open a coffee shop. It would be this place. The espresso is fine, but I love that it is mostly empty. Good thing my following is small enough not to ruin it.",
+    vibeCheck: "4",
+    coffeeQuality: "4",
+    coffeeSelection: "3",
+    customerService: "5",
+    noiseLevel: "5",
+    lighting: "4.25",
+    wifi: "Yes",
+    seating: "4",
+    outlets: "2.5",
+    food: "Yes - Breakfast tacos",
+    parking: "2",
+    restroom: "Yes",
+  },
 ];
 
 export const coffeeShops = raw.map((shop) => ({
@@ -567,7 +586,7 @@ export function toSlug(name) {
 
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "Charlie's Coffee Run",
   "Luce Coffee Roasters",
   "Next Door on Larkin",
-  "Mercantile",
 ];
