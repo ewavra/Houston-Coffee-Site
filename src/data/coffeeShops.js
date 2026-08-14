@@ -496,7 +496,7 @@ const raw = [
     lat: 29.725864347709194, lng: -95.41346327116396,
     overview: "Coffee Forward: A one man show located inside of Vinology, right off of Shepherd. The menu is tiny, and the beans are all hand selected. Imagine you got really bored one day and decided to start roasting coffee and open a coffee shop. It would be this place. The espresso is fine, but I love that it is mostly empty. Good thing my following is small enough not to ruin it.",
     vibeCheck: "4",
-    coffeeQuality: "4",
+    coffeeQuality: "4.75",
     coffeeSelection: "3",
     customerService: "5",
     noiseLevel: "5",
