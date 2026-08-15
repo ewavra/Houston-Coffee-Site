@@ -72,9 +72,11 @@ export default function CoffeeCard({
 }) {
   const score = shop.rankScore;
   const isForward = shop.overview?.split(":")[0] || "";
+  const slug = shop.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
   return (
     <div
+      id={slug}
       className="rounded-2xl border shadow-sm overflow-hidden transition-colors"
       style={{ background: "var(--card)", borderColor: "var(--card-border)" }}
     >

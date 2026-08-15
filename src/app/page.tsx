@@ -121,10 +121,12 @@ export default function Home() {
       {(() => {
         const shop = coffeeShops.find((s) => s.name === recentlyReviewed[0]);
         if (!shop) return null;
+        const slug = shop.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
         return (
           <section className="max-w-5xl mx-auto px-4 pt-8 pb-2">
-            <div
-              className="rounded-2xl border px-5 py-4 flex items-center gap-4"
+            <button
+              onClick={() => document.getElementById(slug)?.scrollIntoView({ behavior: "smooth", block: "center" })}
+              className="w-full text-left rounded-2xl border px-5 py-4 flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity"
               style={{ background: "var(--card)", borderColor: "var(--card-border)" }}
             >
               <span
@@ -140,7 +142,7 @@ export default function Home() {
               <span className="font-serif font-bold text-lg shrink-0" style={{ color: "var(--accent)" }}>
                 {shop.scores.vibeCheck?.toFixed(1) ?? "—"}
               </span>
-            </div>
+            </button>
           </section>
         );
       })()}
