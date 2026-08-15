@@ -508,6 +508,44 @@ const raw = [
     parking: "2",
     restroom: "Yes",
   },
+  {
+    name: "Eden Plant Co.",
+    address: "1123 Providence St, Houston TX 77002",
+    area: "Downtown",
+    lat: 29.76986494191743, lng: -95.35672790233197,
+    overview: "Coffee Forward: Along with \"Kept Secret\" Eden serves as Houston's final boss of performative gentrified postmodern escapist coffee shops. Eden is a plant company moonlighting as a coffee shop, and greenhouse feel reflects that. The space is beautiful and has many elephant ears to keep you company if you come alone. Despite the odds, this place delivers an incredible menu, good espresso, and incredible syrups (lavender bergamot and maple basil) that match the beautiful interior. Rarely does a coffee shop have it all.",
+    vibeCheck: "4.25",
+    coffeeQuality: "4.5",
+    coffeeSelection: "4.25",
+    customerService: "5",
+    noiseLevel: "4",
+    lighting: "5",
+    wifi: "Yes",
+    seating: "3",
+    outlets: "0",
+    food: "Yes - Pastry pop-ups",
+    parking: "3",
+    restroom: "Yes",
+  },
+  {
+    name: "Kept Secret",
+    address: "1109 Providence St, Houston, TX 77002",
+    area: "Downtown",
+    lat: 29.769420756669636, lng: -95.35655732990026,
+    overview: "Coffee Forward: Kept Secret is an outgrowth of Sanman Studios, and is actually located inside their space. While the concept is cool with a highly performative line up of paintings to enjoy while you drink your coffee, I would argue that Kept Secret should put some more stock into their coffee quality and selection. No cortado available? No good review available.",
+    vibeCheck: "3",
+    coffeeQuality: "2",
+    coffeeSelection: "1",
+    customerService: "2",
+    noiseLevel: "2.5",
+    lighting: "4",
+    wifi: "No",
+    seating: "2",
+    outlets: "0",
+    food: "Yes - Kolaches",
+    parking: "2",
+    restroom: "No",
+  },
 ];
 
 export const coffeeShops = raw.map((shop) => ({
@@ -586,7 +624,7 @@ export function toSlug(name) {
 
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "Eden Plant Co.",
+  "Kept Secret",
   "Charlie's Coffee Run",
-  "Luce Coffee Roasters",
-  "Next Door on Larkin",
 ];
