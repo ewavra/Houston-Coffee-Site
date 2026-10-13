@@ -546,6 +546,25 @@ const raw = [
     parking: "2",
     restroom: "No",
   },
+  {
+    name: "787 Coffee",
+    address: "1811 Washington Ave, Houston, TX 77007",
+    area: "Washington Avenue",
+    lat: 29.76760009404644, lng: -95.37624662257848,
+    overview: "Coffee Forward: 787 is a Puerto Rican-owned shop that grows their own beans on the island, roasts them, and then serves them at this shop. While this vertical integration concept is cool, and the coffee is pretty good, this is not a shop for everyone. The space is very bright and tropical feeling. If I wanted to convince someone that they were actually in LA, and not Houston, I would stick them in this place for a couple of hours. They have a unique selection of flavors and their iced lattes come in a plastic bag. Would rather go most other places.",
+    vibeCheck: "3",
+    coffeeQuality: "3.5",
+    coffeeSelection: "5",
+    customerService: "4",
+    noiseLevel: "1",
+    lighting: "4",
+    wifi: "Yes",
+    seating: "3",
+    outlets: "3.5",
+    food: "Yes - Pastries and the like.",
+    parking: "1",
+    restroom: "Yes",
+  },
 ];
 
 export const coffeeShops = raw.map((shop) => ({
@@ -624,7 +643,7 @@ export function toSlug(name) {
 
 // Most recently visited shops, newest first
 export const recentlyReviewed = [
+  "787 Coffee",
   "Eden Plant Co.",
   "Kept Secret",
-  "Charlie's Coffee Run",
 ];
