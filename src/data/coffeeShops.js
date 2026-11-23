@@ -494,7 +494,7 @@ const raw = [
     address: "2314 Bissonnet St, Houston, TX 77005",
     area: "Rice Village",
     lat: 29.725864347709194, lng: -95.41346327116396,
-    overview: "Coffee Forward: A one man show located inside of Vinology, right off of Shepherd. The menu is tiny, and the beans are all hand selected. Imagine you got really bored one day and decided to start roasting coffee and open a coffee shop. It would be this place. The espresso is fine, but I love that it is mostly empty. Good thing my following is small enough not to ruin it.",
+    overview: "Coffee Forward: A one man show located inside of Vinology, right off of Shepherd. The menu is tiny, and the beans are all hand selected. Imagine you got really bored one day and decided to start roasting coffee and open a coffee shop. It would be this place. The espresso is fine, but I love that it is mostly empty. Good thing my following is small enough not to ruin it. Edit -- Charlie's Coffee Run now becomes the only shop I have ever re-reviewed. Jacob and AnnMarie deserve a community award for what they do. Everything is curated and well done here, there is nothing to complain over.",
     vibeCheck: "4.75",
     coffeeQuality: "4.75",
     coffeeSelection: "3",
